@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="app">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="lib/angular/js/angular.js" type="text/javascript"></script>
+        <script src="lib/angular/js/angular-locale_es-es.js" type="text/javascript"></script>
+        <script src="index.js" type="text/javascript"></script>
+    </head>
+    <body ng-controller="IndexController">
+        <div>Jaime Manzanero</div>
+        <h1>{{mensaje}}</h1>
+        
+        <input ng-model="mensaje" />
+        
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>Nombre</td>
+                <!--<td>CodigoEntidad</td>
+                <td>FechaCreacion</td>
+                <td>Direccion</td>
+                <td>CIF</td>-->
+            </tr>
+            
+            <tr ng-repeat="entidadBancaria in entidadesBancarias | orderBy: 'nombre'">
+                <td>{{entidadBancaria.idEntidadBancaria}}</td>
+                <td><a href="get.html?idEntidadBancaria={{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.nombre}}</a></td>
+                <!--<td>{{entidadBancaria.codigoEntidad}}</td>
+                <td>{{entidadBancaria.fechaCreacion}}</td>
+                <td>{{entidadBancaria.direccion}}</td>
+                <td>{{entidadBancaria.cif}}</td>-->
+                
+            </tr>
+        </table>
+        
+    </body>
+</html>
